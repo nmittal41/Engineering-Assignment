@@ -49,7 +49,7 @@ class datastore(Thread):
         """
         try:
             self.lock=FileLock(self.lock_path, timeout=-1)
-            self.lock.acquire(timeout=10)
+            self.lock.acquire(timeout=5)
         except TimeoutError:
             print("Error: More than one process cannot access same file at a time")
 
